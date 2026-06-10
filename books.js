@@ -10,22 +10,26 @@ function renderBooks(filter) {
     books.sort((a, b) => b.rating - a.rating);
   }
 
-  let ratingHTML = "";
-   rating = 4.5;
+  
+   
 
-  for (let i = 0; i < Math.floor(rating); ++i) {
-    ratingHTML += '<i class="fas fa-star"></i>\n';
-  }
-
-  if (!Number.isInteger(rating)) {
-    ratingHTML += '<i class="fas fa-star-half-alt"></i>\n';
-  }
-
+  
   console.log(ratingHTML);
 
   const booksHtml = books
     .map((book) => {
-      return `<div class="book">
+      let rating = book.rating;
+      let ratingHTML = "";
+
+      for (let i =0; i < Math.floor(book.rating); ++i) {
+        ratingHTML += '<i class="fas fa-star"></i>\n';
+      }
+
+       if (!Number.isInteger(rating)) {
+    ratingHTML += '<i class="fas fa-star-half-alt"></i>\n';
+    }
+
+   return `<div class="book">
    <figure class="book__img--wrapper">
   <img class="book__img" src="${book.url}" alt="">
   </figure>
