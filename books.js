@@ -11,12 +11,7 @@ function renderBooks(filter) {
   }
 
   
-   
-
-  
-  console.log(ratingHTML);
-
-  const booksHtml = books
+    const booksHtml = books
     .map((book) => {
       let rating = book.rating;
       let ratingHTML = "";
