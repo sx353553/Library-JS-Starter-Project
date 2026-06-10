@@ -3,17 +3,28 @@ function renderBooks(filter) {
   const books = getBooks();
 
   if (filter === 'LOW_TO_HIGH') {
-    console.log(filter)
     books.sort((a, b) => a.originalPrice - b.originalPrice);
   } else if (filter === 'HIGH_TO_LOW') {
-    console.log(filter)
+   
     books.sort((a, b) => b.originalPrice - a.originalPrice);
   } else if (filter === 'RATING') {
-    console.log(filter)
+    
     books.sort((a, b) => b.rating - a.rating);
   }
 
-console.log(filter);
+  let ratingHtml ="";
+  let rating = 4.5;
+
+  for (let i = 0; i < Math.floor(rating); ++i) {
+    ratingHtml += '<i class="fas fa-star"></i>\n';
+  }
+  if (!Number.isInteger(rating)); {
+    ratingHtml += '<i class="fas fa-star-half-alt"></i>\n';
+  }
+
+  console.log(ratingHtml);
+
+
 const booksHtml = books.map((book) => {
  return `<div class="book">
    <figure class="book__img--wrapper">
