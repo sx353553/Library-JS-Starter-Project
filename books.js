@@ -11,7 +11,7 @@ function renderBooks(filter) {
   }
 
   let ratingHTML = "";
-  ratingHTML = 4.5;
+   rating = 4.5;
 
   for (let i = 0; i < Math.floor(rating); ++i) {
     ratingHTML += '<i class="fas fa-star"></i>\n';
