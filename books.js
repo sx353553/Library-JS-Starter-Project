@@ -51,7 +51,8 @@ function priceHTML(originalPrice, salePrice) {
     return `$${originalPrice.toFixed(2)}`;
 }
 
-return `<span class="book__price--normal">$${originalPrice.toFixed(2)}</span> $${salePrice.toFixed(2)}`;
+return `<span class="book__price--normal">$${originalPrice.toFixed(2)}</span> 
+<span class="book__price--sale">$${salePrice.toFixed(2)}</span>`;
 
 function filterBooks(event) {
   renderBooks(event.target.value);
