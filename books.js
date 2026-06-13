@@ -1,6 +1,9 @@
 async function renderBooks(filter) {
   const booksWrapper = document.querySelector(".books");
+
+  bookswrapper.classList +=' books__loading';
   const books = await getBooks();
+  booksWrapper.classList.remove('books__loading');
 
   if (filter === "LOW_TO_HIGH") {
     books.sort(
